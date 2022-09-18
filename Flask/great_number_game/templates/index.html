@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Great Number Guessing Game!</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'css/style.css') }}">
+</head>
+<body>
+
+	<div id="container">
+		<h1>Welcome to the Great Number Game!</h1>
+		<p>I am thinking of a number between 1 and 100</p>
+        <p>Take a guess!</p>
+		<form action="/show" method="post">
+			<div id = "correct_1">
+				<h1>Correct!</h1>
+				<p>Would you like to play again?</p>
+				<button>Play</button>
+			</div>
+			<div id ="high_1">
+				<h1>Too High!</h1>
+				<p>Guess a lower number</p>
+			</div>
+			<div id = "low_1">
+				<h1>Too low!</h1>
+				<p>Guess a higher number</p>
+			</div>
+			<input type="text" name="guess" class="number" placeholder="Guess a Number!">
+			<br>
+			<input id="submit" type="submit" name="submit">
+
+		</form>
+	</div>
+
+</body>
+</html>

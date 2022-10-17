@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>New Ninja</title>
+    </head>
+    <body>
+        <div class="col-5 right m-2 p-2">
+            <h1 class="m-3">New Ninja</h1>
+            <form action="createNinja" method="post">
+                <div class="form group m-2">
+                    <label for="inputSelect">Dojo</label>
+                    <select class="form-control" id="inputSelect" name="inputSelect">
+                        {% for dojo in all_dojos %}
+                            <option value ="{{dojo.id}}">
+                                {{dojo.name}}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form group m-2">
+                    <label for="inputfirst_name">First Name</label>
+                    <input type="text" name="first_name" id="inputfirst_name">
+                </div>
+                <div class="form group m-2">
+                    <label for="inputlast_name">Last Name</label>
+                    <input type="text" name="last_name" id="inputlast_name">
+                </div>
+                <div class="form group m-2">
+                    <label for="inputAge">Age</label>
+                    <input type="text" name="age" id="inputAge">
+                </div>
+                <input type="submit", value="Add">
+            </form>
+        </div>
+        <form action="/toDojos" method="post" class="m-3">
+            <input type="submit" value="home">
+        </form>
+    </body>
+</html>

@@ -25,5 +25,5 @@ def add_favorite_author(id):
 
 @app.route('/books/create', methods=['POST'])
 def add_book():
-    Book.add_new(request.form)
+    Book.save_new(request.form)
     return redirect('/books')

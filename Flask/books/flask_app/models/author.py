@@ -41,7 +41,7 @@ class Author:
         return author
 
     @classmethod
-    def add_new(cls, data):
+    def save_new(cls, data):
         query="""INSERT INTO authors (name) 
             VALUES (%(name)s);"""
         return connectToMySQL(cls.db).query_db(query, data)

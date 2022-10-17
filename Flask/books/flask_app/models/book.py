@@ -40,7 +40,7 @@ class Book:
         return book
 
     @classmethod
-    def add_new(cls, data):
+    def save_new(cls, data):
         query="""INSERT INTO books (title, number_of_pages) 
             VALUES (%(title)s, %(number_of_pages)s);"""
         book_id=connectToMySQL(cls.db).query_db(query, data)

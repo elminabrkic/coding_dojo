@@ -33,13 +33,6 @@ def toNinjas():
     return redirect(f"/dojos/{thisid}")
 
 
-# @app.route("/dojos/<id>")
-# def dojosId(id):
-#     names = Dojo.get_name(id)
-#     name = names[0]["name"]
-#     allNinjas = Ninja.showNinjasInDojo(id)
-#     return render_template("dojo_show.html", allNinjas = allNinjas, myName = name)
-
 @app.route('/dojos/<int:id>')
 def show_dojo(id):
     data = {

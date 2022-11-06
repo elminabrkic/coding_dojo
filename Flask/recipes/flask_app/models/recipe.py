@@ -39,8 +39,9 @@ class Recipe:
     def get_all(cls):
         query = "SELECT * FROM recipes;"
         results = connectToMySQL(cls.db).query_db(query)
-        all_recipes = list()
-        for row_from_db in results: all_recipes.append(cls(row_from_db))
+        all_recipes = []
+        for recipe in results:
+            all_recipes.append(cls(recipe))
         return all_recipes
 
     @classmethod
